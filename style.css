@@ -1,0 +1,44 @@
+/* ====== Global tweaks ====== */
+:root {
+  --ring: 0 0 0 3px rgba(255,255,255,.25);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+/* ====== Subtle background bursts ====== */
+.bg-burst {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(124,58,237,.15), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(59,130,246,.15), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(168,85,247,.12), transparent 40%);
+}
+
+/* ====== Link & focus styles (accessibility) ====== */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: .75rem;
+}
+
+/* ====== Small utilities ====== */
+.underline\/50 {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(255,255,255,.5);
+}
+
+/* ====== Optional: gentle floating animation for icons/badges ====== */
+@keyframes floaty {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+.floaty { animation: floaty 4s ease-in-out infinite; }
